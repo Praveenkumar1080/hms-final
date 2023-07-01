@@ -21,7 +21,6 @@ import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
 public class Affiliatedwith {
 
 
@@ -31,6 +30,6 @@ public class Affiliatedwith {
 	@Column
 	private Integer department;
 	@Column
-	private Boolean primaryaffiliation;
+	private Boolean primaryAffiliation;
 	
 }

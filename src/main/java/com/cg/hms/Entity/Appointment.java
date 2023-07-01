@@ -26,12 +26,12 @@ public class Appointment {
 	private Integer appointmentid;
 	@Column
 	private Integer patient;
-	@Column
+	@Column()
 	private Integer prepnums;
 	@Column
 	private Integer physician;
 	@Column
-	private String start_dt_time;
+	private String startDtTime;
 	@Column
 	private String end_dt_time;
 	@Column
