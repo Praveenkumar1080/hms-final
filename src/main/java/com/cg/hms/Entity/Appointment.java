@@ -1,39 +1,40 @@
 package com.cg.hms.Entity;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-
 public class Appointment {
 
 	@Id
-	@GeneratedValue (strategy=GenerationType.AUTO)
-	private Integer appointmentid;
+	private Integer AppointmentID;
+	@ManyToOne
+	@JoinColumn(name="patient")
+	private Patient patient;
+	@ManyToOne
+	@JoinColumn(name="prepnurse")
+	private Nurse prepnurse;
+	@ManyToOne
+	@JoinColumn(name="physican")
+	private Physician physician;
 	@Column
-	private Integer patient;
-	@Column()
-	private Integer prepnums;
+	private Timestamp start_dt_Time;
 	@Column
-	private Integer physician;
-	@Column
-	private String startDtTime;
-	@Column
-	private String end_dt_time;
+	private Timestamp end_dt_time;
 	@Column
 	private String examinationroom;
 	}

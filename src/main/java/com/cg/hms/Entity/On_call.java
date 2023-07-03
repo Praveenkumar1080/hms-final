@@ -1,42 +1,34 @@
 package com.cg.hms.Entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class On_call {
+@Id
 private int nurse;
-private int blockfloor;
+@ManyToOne
+@JoinColumns ({
+    @JoinColumn(name="blockfloor", referencedColumnName = "blockfloor"),
+    @JoinColumn(name="blockcode", referencedColumnName = "blockcode"),
+})
+private Block block;
+@Column
 private String oncallstart;
+@Column
 private String oncallend;
-public int getNurse() {
-	return nurse;
-}
-public void setNurse(int nurse) {
-	this.nurse = nurse;
-}
-public int getBlockfloor() {
-	return blockfloor;
-}
-public void setBlockfloor(int blockfloor) {
-	this.blockfloor = blockfloor;
-}
-public String getOncallstart() {
-	return oncallstart;
-}
-public void setOncallstart(String oncallstart) {
-	this.oncallstart = oncallstart;
-}
-public String getOncallend() {
-	return oncallend;
-}
-public void setOncallend(String oncallend) {
-	this.oncallend = oncallend;
-}
-@Override
-public String toString() {
-	return "On_call [nurse=" + nurse + ", blockfloor=" + blockfloor + ", oncallstart=" + oncallstart + ", oncallend="
-			+ oncallend + "]";
-}
-public On_call() {
-	super();
-	// TODO Auto-generated constructor stub
-}
 
 }

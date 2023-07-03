@@ -1,20 +1,27 @@
 package com.cg.hms.Entity;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Medication {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+@Id
 private Integer code;
-	@Column
+@Column
 private String name;
-	@Column
+@Column
 private String brand;
-	@Column
+@Column
 private String description;
 
 }
