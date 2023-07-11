@@ -74,6 +74,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>hms</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
